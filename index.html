@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--projecttitle--><title>SET PLANE WISUDA</title><!--projecttitle-end-->
+		<!--projectdescription--><meta name="description" content="Baruuuuurururuurru"><!--projectdescription-end-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Insert this line above script imports  -->
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
+		<script src="imagedata.js"></script>
+		<script src="jquery.js"></script>
+		<script src="three.min.js"></script>
+		<script src="panolens.min.js"></script>
+		
+		<!-- Insert this line after script imports -->
+		<script>if (window.module) module = window.module;</script>
+		
+		<style>
+		
+			
+						
+			/* SCROLLBAR STYLING */
+			/* width */
+			::-webkit-scrollbar {
+				width: 0.25em;
+				height: 0.25em;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #2c3643; 
+			}
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #0d9e59; 
+				transition: background .5s;
+			}
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #00e075; 
+			}
+
+
+			html, body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+				color; black;
+			}
+
+			a:link, a:visited{
+				color: #bdc3c7;	
+			}
+
+			.fullwrapper{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: black;
+			}
+			
+			#container {
+                width: 100%;
+                height: 100%;
+            }
+			
+			#tmp{
+				position: fixed;
+				top: 0;
+				left: 0; 
+				right: 0;
+				bottom: 0;
+				padding: 3em;
+				background-color: rgba(0,0,0,.5);
+				backdrop-filter: blur(5px);
+				display: none;
+			}
+		</style>
+	</head>
+	<body id="body">
+	    <div id="container" style="color: black;"></div>
+    	
+		
+		
+		<!--customhtml--><div class='customhotspot' id='PINTUMASUKVVIP'></div><div class='customhotspot' id='DALAMTENDA1'></div><div class='customhotspot' id='DALAMTENDA2'></div><div class='customhotspot' id='DALAMTENDA3'></div><div class='customhotspot' id='DEPANSENAT'></div><div class='customhotspot' id='OPERATOR'></div><div class='customhotspot' id='PADUS'></div><div class='customhotspot' id='PINTUMASUKDANPENERIMATAMUMAHASISWA'></div><div class='customhotspot' id='SAMPINGKANANGEDUNG'></div><div class='customhotspot' id='SAMPINGKIRIGEDUNG'></div><div class='customhotspot' id='SENAT'></div><div class='customhotspot' id='TENGAHDALAMGEDUNG2'></div><div class='customhotspot' id='TENGAHDALAMGEDUNG'></div><div class='customhotspot' id='TENGAHMASUKGEDUNG'></div><!--customhtml-end-->
+		
+		<div id="tmp">
+			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
+			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
+		</div>
+
+		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
+    		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
+    			<!--loadingtext-->Loading...<!--loadingtext-end-->
+				<div id="loadingperc" style="font-size:12px;"></div>
+    		</div>
+    	</div>
+		
+    	<script>
+			
+            var container = document.querySelector( '#container' );
+			/*panolens*/
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
+/*panolens-end*/
+			
+			viewer.addUpdateCallback(function(){});
+			
+			/*panoramas*/
+var PINTUMASUKVVIP = new PANOLENS.ImagePanorama( "panoramas/PINTUMASUKVVIP.JPG" );
+			PINTUMASUKVVIP.addEventListener('progress', onProgress);
+			PINTUMASUKVVIP.addEventListener('load', function(e){
+				endLoading();
+			});
+			PINTUMASUKVVIP.addEventListener('enter', function(e){
+				endLoading();
+			});
+			PINTUMASUKVVIP.addEventListener('click', function(e){
+			});
+
+var infospotPINTUMASUKVVIP0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotPINTUMASUKVVIP0.position.set( 2856.39, -232.25, -4087.82 );
+					PINTUMASUKVVIP.add(infospotPINTUMASUKVVIP0);
+infospotPINTUMASUKVVIP0.addEventListener('click', function(){
+ChangePanorama('PINTUMASUKDANPENERIMATAMUMAHASISWA');
+});
+var infospotPINTUMASUKVVIP1 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotPINTUMASUKVVIP1.position.set( 4266.45, -708.32, 2501.21 );
+					PINTUMASUKVVIP.add(infospotPINTUMASUKVVIP1);
+infospotPINTUMASUKVVIP1.addEventListener('click', function(){
+ChangePanorama('DALAMTENDA1');
+});
+viewer.add( PINTUMASUKVVIP );
+var DALAMTENDA1 = new PANOLENS.ImagePanorama( "panoramas/DALAMTENDA1.JPG" );
+			DALAMTENDA1.addEventListener('progress', onProgress);
+			DALAMTENDA1.addEventListener('load', function(e){
+				endLoading();
+			});
+			DALAMTENDA1.addEventListener('enter', function(e){
+				endLoading();
+			});
+			DALAMTENDA1.addEventListener('click', function(e){
+			});
+
+var infospotDALAMTENDA10 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDALAMTENDA10.position.set( -1711.99, -179.84, -4683.66 );
+					DALAMTENDA1.add(infospotDALAMTENDA10);
+infospotDALAMTENDA10.addEventListener('click', function(){
+ChangePanorama('PINTUMASUKDANPENERIMATAMUMAHASISWA');
+});
+var infospotDALAMTENDA11 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDALAMTENDA11.position.set( -4355.36, -168.73, 2435.89 );
+					DALAMTENDA1.add(infospotDALAMTENDA11);
+infospotDALAMTENDA11.addEventListener('click', function(){
+ChangePanorama('PINTUMASUKVVIP');
+});
+var infospotDALAMTENDA12 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDALAMTENDA12.position.set( 4728.11, -1112.16, 1155.72 );
+					DALAMTENDA1.add(infospotDALAMTENDA12);
+infospotDALAMTENDA12.addEventListener('click', function(){
+ChangePanorama('DALAMTENDA2');
+});
+viewer.add( DALAMTENDA1 );
+var DALAMTENDA2 = new PANOLENS.ImagePanorama( "panoramas/DALAMTENDA2.JPG" );
+			DALAMTENDA2.addEventListener('progress', onProgress);
+			DALAMTENDA2.addEventListener('load', function(e){
+				endLoading();
+			});
+			DALAMTENDA2.addEventListener('enter', function(e){
+				endLoading();
+			});
+			DALAMTENDA2.addEventListener('click', function(e){
+			});
+
+var infospotDALAMTENDA20 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDALAMTENDA20.position.set( -4451.50, -1200.54, 1925.32 );
+					DALAMTENDA2.add(infospotDALAMTENDA20);
+infospotDALAMTENDA20.addEventListener('click', function(){
+ChangePanorama('DALAMTENDA1');
+});
+var infospotDALAMTENDA21 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDALAMTENDA21.position.set( 1688.07, -1131.40, 4560.24 );
+					DALAMTENDA2.add(infospotDALAMTENDA21);
+infospotDALAMTENDA21.addEventListener('click', function(){
+ChangePanorama('TENGAHMASUKGEDUNG');
+});
+var infospotDALAMTENDA22 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDALAMTENDA22.position.set( 4908.50, -897.64, 133.09 );
+					DALAMTENDA2.add(infospotDALAMTENDA22);
+infospotDALAMTENDA22.addEventListener('click', function(){
+ChangePanorama('DALAMTENDA3');
+});
+viewer.add( DALAMTENDA2 );
+var DALAMTENDA3 = new PANOLENS.ImagePanorama( "panoramas/DALAMTENDA3.JPG" );
+			DALAMTENDA3.addEventListener('progress', onProgress);
+			DALAMTENDA3.addEventListener('load', function(e){
+				endLoading();
+			});
+			DALAMTENDA3.addEventListener('enter', function(e){
+				endLoading();
+			});
+			DALAMTENDA3.addEventListener('click', function(e){
+			});
+
+var infospotDALAMTENDA30 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDALAMTENDA30.position.set( -4690.01, -1709.00, -91.56 );
+					DALAMTENDA3.add(infospotDALAMTENDA30);
+infospotDALAMTENDA30.addEventListener('click', function(){
+ChangePanorama('DALAMTENDA2');
+});
+viewer.add( DALAMTENDA3 );
+var DEPANSENAT = new PANOLENS.ImagePanorama( "panoramas/DEPANSENAT.JPG" );
+			DEPANSENAT.addEventListener('progress', onProgress);
+			DEPANSENAT.addEventListener('load', function(e){
+				endLoading();
+			});
+			DEPANSENAT.addEventListener('enter', function(e){
+				endLoading();
+			});
+			DEPANSENAT.addEventListener('click', function(e){
+			});
+
+var infospotDEPANSENAT0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDEPANSENAT0.position.set( 44.28, -783.10, 4935.94 );
+					DEPANSENAT.add(infospotDEPANSENAT0);
+infospotDEPANSENAT0.addEventListener('click', function(){
+ChangePanorama('SAMPINGKIRIGEDUNG');
+});
+var infospotDEPANSENAT1 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDEPANSENAT1.position.set( 804.97, -1472.45, -4701.18 );
+					DEPANSENAT.add(infospotDEPANSENAT1);
+infospotDEPANSENAT1.addEventListener('click', function(){
+ChangePanorama('SAMPINGKANANGEDUNG');
+});
+var infospotDEPANSENAT2 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotDEPANSENAT2.position.set( -4768.34, -1445.58, -286.32 );
+					DEPANSENAT.add(infospotDEPANSENAT2);
+infospotDEPANSENAT2.addEventListener('click', function(){
+ChangePanorama('TENGAHDALAMGEDUNG2');
+});
+viewer.add( DEPANSENAT );
+var OPERATOR = new PANOLENS.ImagePanorama( "panoramas/OPERATOR.JPG" );
+			OPERATOR.addEventListener('progress', onProgress);
+			OPERATOR.addEventListener('load', function(e){
+				endLoading();
+			});
+			OPERATOR.addEventListener('enter', function(e){
+				endLoading();
+			});
+			OPERATOR.addEventListener('click', function(e){
+			});
+
+var infospotOPERATOR0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotOPERATOR0.position.set( -4782.31, -541.92, 1316.44 );
+					OPERATOR.add(infospotOPERATOR0);
+infospotOPERATOR0.addEventListener('click', function(){
+ChangePanorama('TENGAHDALAMGEDUNG');
+});
+viewer.add( OPERATOR );
+var PADUS = new PANOLENS.ImagePanorama( "panoramas/PADUS.JPG" );
+			PADUS.addEventListener('progress', onProgress);
+			PADUS.addEventListener('load', function(e){
+				endLoading();
+			});
+			PADUS.addEventListener('enter', function(e){
+				endLoading();
+			});
+			PADUS.addEventListener('click', function(e){
+			});
+
+var infospotPADUS0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotPADUS0.position.set( 608.30, -818.88, -4889.42 );
+					PADUS.add(infospotPADUS0);
+infospotPADUS0.addEventListener('click', function(){
+ChangePanorama('SENAT');
+});
+var infospotPADUS1 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotPADUS1.position.set( -4093.93, -2673.00, -1014.40 );
+					PADUS.add(infospotPADUS1);
+infospotPADUS1.addEventListener('click', function(){
+ChangePanorama('SAMPINGKIRIGEDUNG');
+});
+viewer.add( PADUS );
+var PINTUMASUKDANPENERIMATAMUMAHASISWA = new PANOLENS.ImagePanorama( "panoramas/PINTUMASUKDANPENERIMATAMUMAHASISWA.JPG" );
+			PINTUMASUKDANPENERIMATAMUMAHASISWA.addEventListener('progress', onProgress);
+			PINTUMASUKDANPENERIMATAMUMAHASISWA.addEventListener('load', function(e){
+				endLoading();
+			});
+			PINTUMASUKDANPENERIMATAMUMAHASISWA.addEventListener('enter', function(e){
+				endLoading();
+			});
+			PINTUMASUKDANPENERIMATAMUMAHASISWA.addEventListener('click', function(e){
+			});
+
+var infospotPINTUMASUKDANPENERIMATAMUMAHASISWA0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotPINTUMASUKDANPENERIMATAMUMAHASISWA0.position.set( 4986.57, -2.74, -254.30 );
+					PINTUMASUKDANPENERIMATAMUMAHASISWA.add(infospotPINTUMASUKDANPENERIMATAMUMAHASISWA0);
+infospotPINTUMASUKDANPENERIMATAMUMAHASISWA0.addEventListener('click', function(){
+ChangePanorama('PINTUMASUKVVIP');
+});
+var infospotPINTUMASUKDANPENERIMATAMUMAHASISWA1 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotPINTUMASUKDANPENERIMATAMUMAHASISWA1.position.set( 4216.55, -129.60, -2665.56 );
+					PINTUMASUKDANPENERIMATAMUMAHASISWA.add(infospotPINTUMASUKDANPENERIMATAMUMAHASISWA1);
+infospotPINTUMASUKDANPENERIMATAMUMAHASISWA1.addEventListener('click', function(){
+ChangePanorama('DALAMTENDA1');
+});
+viewer.add( PINTUMASUKDANPENERIMATAMUMAHASISWA );
+var SAMPINGKANANGEDUNG = new PANOLENS.ImagePanorama( "panoramas/SAMPINGKANANGEDUNG.JPG" );
+			SAMPINGKANANGEDUNG.addEventListener('progress', onProgress);
+			SAMPINGKANANGEDUNG.addEventListener('load', function(e){
+				endLoading();
+			});
+			SAMPINGKANANGEDUNG.addEventListener('enter', function(e){
+				endLoading();
+			});
+			SAMPINGKANANGEDUNG.addEventListener('click', function(e){
+			});
+
+var infospotSAMPINGKANANGEDUNG0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotSAMPINGKANANGEDUNG0.position.set( -234.02, -1596.04, 4724.22 );
+					SAMPINGKANANGEDUNG.add(infospotSAMPINGKANANGEDUNG0);
+infospotSAMPINGKANANGEDUNG0.addEventListener('click', function(){
+ChangePanorama('DEPANSENAT');
+});
+viewer.add( SAMPINGKANANGEDUNG );
+var SAMPINGKIRIGEDUNG = new PANOLENS.ImagePanorama( "panoramas/SAMPINGKIRIGEDUNG.JPG" );
+			SAMPINGKIRIGEDUNG.addEventListener('progress', onProgress);
+			SAMPINGKIRIGEDUNG.addEventListener('load', function(e){
+				endLoading();
+			});
+			SAMPINGKIRIGEDUNG.addEventListener('enter', function(e){
+				endLoading();
+			});
+			SAMPINGKIRIGEDUNG.addEventListener('click', function(e){
+			});
+
+var infospotSAMPINGKIRIGEDUNG0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotSAMPINGKIRIGEDUNG0.position.set( 185.06, -1548.84, -4744.20 );
+					SAMPINGKIRIGEDUNG.add(infospotSAMPINGKIRIGEDUNG0);
+infospotSAMPINGKIRIGEDUNG0.addEventListener('click', function(){
+ChangePanorama('DEPANSENAT');
+});
+viewer.add( SAMPINGKIRIGEDUNG );
+var SENAT = new PANOLENS.ImagePanorama( "panoramas/SENAT.JPG" );
+			SENAT.addEventListener('progress', onProgress);
+			SENAT.addEventListener('load', function(e){
+				endLoading();
+			});
+			SENAT.addEventListener('enter', function(e){
+				endLoading();
+			});
+			SENAT.addEventListener('click', function(e){
+			});
+
+var infospotSENAT0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotSENAT0.position.set( 286.00, -774.48, -4924.36 );
+					SENAT.add(infospotSENAT0);
+infospotSENAT0.addEventListener('click', function(){
+ChangePanorama('PADUS');
+});
+var infospotSENAT1 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotSENAT1.position.set( 4646.92, -1819.73, 134.25 );
+					SENAT.add(infospotSENAT1);
+infospotSENAT1.addEventListener('click', function(){
+ChangePanorama('DEPANSENAT');
+});
+viewer.add( SENAT );
+var TENGAHDALAMGEDUNG2 = new PANOLENS.ImagePanorama( "panoramas/TENGAHDALAMGEDUNG2.JPG" );
+			TENGAHDALAMGEDUNG2.addEventListener('progress', onProgress);
+			TENGAHDALAMGEDUNG2.addEventListener('load', function(e){
+				endLoading();
+			});
+			TENGAHDALAMGEDUNG2.addEventListener('enter', function(e){
+				endLoading();
+			});
+			TENGAHDALAMGEDUNG2.addEventListener('click', function(e){
+			});
+
+var infospotTENGAHDALAMGEDUNG20 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotTENGAHDALAMGEDUNG20.position.set( -4769.28, -1387.07, -528.68 );
+					TENGAHDALAMGEDUNG2.add(infospotTENGAHDALAMGEDUNG20);
+infospotTENGAHDALAMGEDUNG20.addEventListener('click', function(){
+ChangePanorama('TENGAHDALAMGEDUNG');
+});
+var infospotTENGAHDALAMGEDUNG21 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotTENGAHDALAMGEDUNG21.position.set( 4962.45, -430.70, 335.69 );
+					TENGAHDALAMGEDUNG2.add(infospotTENGAHDALAMGEDUNG21);
+infospotTENGAHDALAMGEDUNG21.addEventListener('click', function(){
+ChangePanorama('DEPANSENAT');
+});
+viewer.add( TENGAHDALAMGEDUNG2 );
+var TENGAHDALAMGEDUNG = new PANOLENS.ImagePanorama( "panoramas/TENGAHDALAMGEDUNG.JPG" );
+			TENGAHDALAMGEDUNG.addEventListener('progress', onProgress);
+			TENGAHDALAMGEDUNG.addEventListener('load', function(e){
+				endLoading();
+			});
+			TENGAHDALAMGEDUNG.addEventListener('enter', function(e){
+				endLoading();
+			});
+			TENGAHDALAMGEDUNG.addEventListener('click', function(e){
+			});
+
+var infospotTENGAHDALAMGEDUNG0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotTENGAHDALAMGEDUNG0.position.set( -4880.42, -979.21, -359.23 );
+					TENGAHDALAMGEDUNG.add(infospotTENGAHDALAMGEDUNG0);
+infospotTENGAHDALAMGEDUNG0.addEventListener('click', function(){
+ChangePanorama('TENGAHMASUKGEDUNG');
+});
+var infospotTENGAHDALAMGEDUNG1 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotTENGAHDALAMGEDUNG1.position.set( -476.39, -622.66, 4932.35 );
+					TENGAHDALAMGEDUNG.add(infospotTENGAHDALAMGEDUNG1);
+infospotTENGAHDALAMGEDUNG1.addEventListener('click', function(){
+ChangePanorama('OPERATOR');
+});
+var infospotTENGAHDALAMGEDUNG2 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotTENGAHDALAMGEDUNG2.position.set( 4930.03, -675.88, 400.56 );
+					TENGAHDALAMGEDUNG.add(infospotTENGAHDALAMGEDUNG2);
+infospotTENGAHDALAMGEDUNG2.addEventListener('click', function(){
+ChangePanorama('TENGAHDALAMGEDUNG2');
+});
+viewer.add( TENGAHDALAMGEDUNG );
+var TENGAHMASUKGEDUNG = new PANOLENS.ImagePanorama( "panoramas/TENGAHMASUKGEDUNG.JPG" );
+			TENGAHMASUKGEDUNG.addEventListener('progress', onProgress);
+			TENGAHMASUKGEDUNG.addEventListener('load', function(e){
+				endLoading();
+			});
+			TENGAHMASUKGEDUNG.addEventListener('enter', function(e){
+				endLoading();
+			});
+			TENGAHMASUKGEDUNG.addEventListener('click', function(e){
+			});
+
+var infospotTENGAHMASUKGEDUNG0 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotTENGAHMASUKGEDUNG0.position.set( 4983.17, -238.21, 142.48 );
+					TENGAHMASUKGEDUNG.add(infospotTENGAHMASUKGEDUNG0);
+infospotTENGAHMASUKGEDUNG0.addEventListener('click', function(){
+ChangePanorama('TENGAHDALAMGEDUNG');
+});
+var infospotTENGAHMASUKGEDUNG1 = new PANOLENS.Infospot( 512, hotspotIcons[1].data, true );
+					infospotTENGAHMASUKGEDUNG1.position.set( -4718.55, -1620.99, 166.63 );
+					TENGAHMASUKGEDUNG.add(infospotTENGAHMASUKGEDUNG1);
+infospotTENGAHMASUKGEDUNG1.addEventListener('click', function(){
+ChangePanorama('DALAMTENDA2');
+});
+viewer.add( TENGAHMASUKGEDUNG );
+$(document).ready(function(){ ChangePanorama('PINTUMASUKVVIP'); });
+
+/*panoramas-end*/
+            
+			var stilloading = true;
+			function onProgress ( event ) {
+				
+				progress = event.progress.loaded / event.progress.total * 100;
+				console.log("Loading panorama: " + progress + " ... ");
+				$("#loadingperc").html(Math.ceil(progress) + "%");
+				if(Math.ceil(progress) >= 100){
+					endLoading();
+					stilloading = false;
+
+				}else{
+				    clearTimeout(elTimer);
+					stilloading = true;
+					$("#loading").show();
+				}
+			}
+			
+			var elTimer;
+			function endLoading(){
+			    clearTimeout(elTimer);
+				if(stilloading == false){
+					elTimer = setTimeout(function(){
+						$("#loading").fadeOut();
+					}, 750);
+					
+				}
+			}
+			
+			function hideTemp(){
+				$("#tmp").fadeOut();
+				setTimeout(function(){
+					$("#tmpcontent").html("");
+				},1000);
+			}
+			
+			function showMedia(type, content){
+				switch(type){
+					case 1 :
+						//Image
+						$("#tmpcontent").html("<img src='"+content+"' style='width: 100%;'>");
+						$("#tmp").fadeIn();
+						break;
+					case 2 :
+						//Video
+						$("#tmpcontent").html("<video id='webvideo' controls autoplay style='width: 100%; height: 100%;'><source src='" +content+ "' type='video/mp4'> Your browser does not support the video tag. </video>");
+						$("#tmp").fadeIn();
+						break;
+					case 3 :
+						//Audio
+						$("#tmpcontent").html("<audio controls style='width: 100%;'><source src='"+content+"' type='audio/ogg'>Your browser does not support the audio tag.</audio>");
+						$("#tmp").fadeIn();
+						break;
+					case 4 :
+						//PDF
+						$("#tmpcontent").html("<iframe src='pdfjs/web/viewer.html?file=../../"+content+"' style='width: 100%; height: 99%;'></iframe>");
+						$("#tmp").fadeIn();
+						break;
+				}
+			}
+			
+			
+			
+			//Update Callback
+			viewer.addUpdateCallback(function(){
+				
+				/*viewerupdatecallback*/
+if(viewer.panorama == PINTUMASUKVVIP){
+}
+
+if(viewer.panorama == DALAMTENDA1){
+}
+
+if(viewer.panorama == DALAMTENDA2){
+}
+
+if(viewer.panorama == DALAMTENDA3){
+}
+
+if(viewer.panorama == DEPANSENAT){
+}
+
+if(viewer.panorama == OPERATOR){
+}
+
+if(viewer.panorama == PADUS){
+}
+
+if(viewer.panorama == PINTUMASUKDANPENERIMATAMUMAHASISWA){
+}
+
+if(viewer.panorama == SAMPINGKANANGEDUNG){
+}
+
+if(viewer.panorama == SAMPINGKIRIGEDUNG){
+}
+
+if(viewer.panorama == SENAT){
+}
+
+if(viewer.panorama == TENGAHDALAMGEDUNG2){
+}
+
+if(viewer.panorama == TENGAHDALAMGEDUNG){
+}
+
+if(viewer.panorama == TENGAHMASUKGEDUNG){
+}
+/*viewerupdatecallback-end*/
+				
+				
+			});
+			
+			
+			
+			var hotspotsvisible = true;
+			function ShowMyInfospot(hs, elid){
+				var thehs = toScreenPosition(hs);
+				if(thehs.z < 1){
+					$("#" + elid).css({
+						"top" : (thehs.y - ($("#" + elid).height()/2)) + "px",
+						"left" : (thehs.x - ($("#" + elid).width()/2)) + "px",
+					});
+					if(hotspotsvisible)
+						$("#" + elid).show();
+				}else{
+					$("#" + elid).hide();
+				}
+				
+			}
+			
+			function toScreenPosition(obj)
+			{
+				var vector = new THREE.Vector3();
+				var widthHalf = 0.5 * innerWidth;
+				var heightHalf = 0.5 * innerHeight;
+				
+				//obj.updateMatrixWorld();				
+				vector.setFromMatrixPosition(obj.matrixWorld);
+				
+				
+				vector.project(viewer.camera);
+
+				vector.x = ( vector.x * widthHalf ) + widthHalf;
+				vector.y = - ( vector.y * heightHalf ) + heightHalf;
+
+				
+				return { 
+					x: vector.x,
+					y: vector.y,
+					z: vector.z,
+				};
+
+			};
+			
+			var currentPanorama;
+			function ChangePanorama(panorama){
+				currentPanorama = panorama;
+				HideInfospots(); 
+				$("#loading").fadeIn();
+				//$(".customhotspot").fadeOut();
+				setTimeout(function(){
+					viewer.setPanorama(window[panorama]);
+				}, 100);
+				setTimeout(function(){
+					$("#" + panorama).fadeIn();
+				}, 1000);
+				
+			}
+			
+			
+			
+			
+			
+			function HideInfospots(){
+				$(".customhotspot").fadeOut();
+			}
+
+			/*customjs*//*customjs-end*/
+        </script>
+	</body>
+</html>
